@@ -1,8 +1,8 @@
-package com.view.bunnyview.application.post;
+package com.hub.bunnyLovers.application.post;
 
-import com.view.bunnyview.api.post.request.PostSaveRequest;
-import com.view.bunnyview.entity.post.Post;
-import com.view.bunnyview.repository.post.PostRepository;
+import com.hub.bunnyLovers.api.post.request.PostSaveRequest;
+import com.hub.bunnyLovers.entity.post.Post;
+import com.hub.bunnyLovers.repository.post.PostRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

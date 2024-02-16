@@ -1,4 +1,4 @@
-package com.view.bunnyview.entity.post;
+package com.hub.bunnyLovers.entity.post;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.view.bunnyview.api.post.request;
+package com.hub.bunnyLovers.api.post.request;
 
 import lombok.Getter;
 

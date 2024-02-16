@@ -1,4 +1,4 @@
-package com.view.bunnyview.config;
+package com.hub.bunnyLovers.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

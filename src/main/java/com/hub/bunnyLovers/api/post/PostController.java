@@ -1,8 +1,8 @@
-package com.view.bunnyview.api.post;
+package com.hub.bunnyLovers.api.post;
 
-import com.view.bunnyview.api.post.request.PostSaveRequest;
-import com.view.bunnyview.application.post.PostService;
-import com.view.bunnyview.entity.post.Post;
+import com.hub.bunnyLovers.application.post.PostService;
+import com.hub.bunnyLovers.api.post.request.PostSaveRequest;
+import com.hub.bunnyLovers.entity.post.Post;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
