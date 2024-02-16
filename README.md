@@ -1,8 +1,7 @@
 # BunnyView 🐰
-![bunnyLoversHub-logo](https://github.com/pelexsa/bunnyLoversHub-api/assets/62424600/83a8b172-c63f-4eb2-a29a-3faef0afe7be)<br>
 BunnyView는 토끼를 사랑하고, 관심이 있으며, 기르는 사람들을 위한 커뮤니티 플랫폼입니다.<br>
-이 공간은 토끼의 다양한 종류를 탐색하고, 같은 관심사를 가진 사람들과 소통할 수 있는 게시판을 제공합니다.
-<br><br>
+이 공간은 토끼의 다양한 종류를 탐색하고, 같은 관심사를 가진 사람들과 소통할 수 있는 게시판을 제공합니다.<br><br>
+![bunnyLoversHub-logo](https://github.com/pelexsa/bunnyLoversHub-api/assets/62424600/83a8b172-c63f-4eb2-a29a-3faef0afe7be)<br><br>
 
 ## 🚀 기술 스택
 - **서버 사이드:** `Spring Boot + JPA`
