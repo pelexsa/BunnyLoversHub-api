@@ -1,4 +1,4 @@
-package com.hub.bunnyLovers.api.post.request;
+package com.hub.bunnyLovers.api.comment.request;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

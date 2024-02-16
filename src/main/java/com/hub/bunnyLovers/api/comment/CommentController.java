@@ -1,7 +1,7 @@
-package com.hub.bunnyLovers.api.post;
+package com.hub.bunnyLovers.api.comment;
 
-import com.hub.bunnyLovers.api.post.request.CommentSaveRequest;
-import com.hub.bunnyLovers.application.post.CommentService;
+import com.hub.bunnyLovers.api.comment.request.CommentSaveRequest;
+import com.hub.bunnyLovers.application.comment.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,11 @@
 package com.hub.bunnyLovers.api.post;
 
 import com.hub.bunnyLovers.api.post.request.PostSaveRequest;
+import com.hub.bunnyLovers.api.post.request.PostUpdateRequest;
 import com.hub.bunnyLovers.application.post.PostService;
 import com.hub.bunnyLovers.entity.post.Post;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,32 +26,33 @@ public class PostController {
 	private final PostService postService;
 
 	@GetMapping
-	public ResponseEntity<List<Post>> findAllPosts() {
-		return new ResponseEntity<>(postService.findAll(), HttpStatus.OK);
+	public ResponseEntity<List<Post>> findPosts() {
+		return new ResponseEntity<>(postService.findPosts(), HttpStatus.OK);
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Post> findPostById(@PathVariable Long id) throws Exception {
+	public ResponseEntity<Post> findPostById(@PathVariable("id") Optional<Long> id)
+		throws Exception {
 		Post post = postService.findById(id);
 		return new ResponseEntity<>(post, HttpStatus.OK);
 	}
 
 	@PostMapping
-	public ResponseEntity<Void> addPost(@RequestBody Post post) {
-		postService.addPost(post);
+	public ResponseEntity<Void> addPost(@RequestBody PostSaveRequest postSaveRequest) {
+		postService.addPost(postSaveRequest);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 
 	@PutMapping
-	public ResponseEntity<Void> updatePost(@RequestBody PostSaveRequest postSaveRequest)
+	public ResponseEntity<Void> updatePost(@RequestBody PostUpdateRequest postUpdateRequest)
 		throws Exception {
-		postService.updatePost(postSaveRequest);
+		postService.updatePost(postUpdateRequest);
 		return ResponseEntity.ok().build();
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deletePost(@PathVariable Long id) {
-		postService.deleteById(id);
+		postService.deletePostById(id);
 		return ResponseEntity.ok().build();
 	}
 

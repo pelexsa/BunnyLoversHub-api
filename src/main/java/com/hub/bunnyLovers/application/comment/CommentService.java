@@ -1,6 +1,6 @@
-package com.hub.bunnyLovers.application.post;
+package com.hub.bunnyLovers.application.comment;
 
-import com.hub.bunnyLovers.api.post.request.CommentSaveRequest;
+import com.hub.bunnyLovers.api.comment.request.CommentSaveRequest;
 import com.hub.bunnyLovers.entity.comments.Comments;
 import com.hub.bunnyLovers.entity.post.Post;
 import com.hub.bunnyLovers.repository.comment.CommentRepository;
