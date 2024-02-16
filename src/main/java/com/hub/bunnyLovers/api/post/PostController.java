@@ -1,7 +1,7 @@
 package com.hub.bunnyLovers.api.post;
 
-import com.hub.bunnyLovers.application.post.PostService;
 import com.hub.bunnyLovers.api.post.request.PostSaveRequest;
+import com.hub.bunnyLovers.application.post.PostService;
 import com.hub.bunnyLovers.entity.post.Post;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -29,41 +29,28 @@ public class PostController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Post> findPostById(@PathVariable Long id) {
+	public ResponseEntity<Post> findPostById(@PathVariable Long id) throws Exception {
 		Post post = postService.findById(id);
-		if (post != null) {
-			return new ResponseEntity<>(post, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+		return new ResponseEntity<>(post, HttpStatus.OK);
 	}
 
 	@PostMapping
-	public ResponseEntity<Post> createPost(@RequestBody Post post) {
-		Post savedPost = postService.save(post);
-		return new ResponseEntity<>(savedPost, HttpStatus.CREATED);
+	public ResponseEntity<Void> addPost(@RequestBody Post post) {
+		postService.addPost(post);
+		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 
-	@PutMapping("/{id}")
-	public ResponseEntity<Post> updatePost(@PathVariable Long id,
-		@RequestBody PostSaveRequest postSaveRequest) {
-		Post post = postService.findById(id);
-		if (postSaveRequest != null) {
-			final Post updatedPost = postService.update(post, postSaveRequest);
-			return new ResponseEntity<>(updatedPost, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+	@PutMapping
+	public ResponseEntity<Void> updatePost(@RequestBody PostSaveRequest postSaveRequest)
+		throws Exception {
+		postService.updatePost(postSaveRequest);
+		return ResponseEntity.ok().build();
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<HttpStatus> deletePost(@PathVariable Long id) {
-		try {
-			postService.deleteById(id);
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+	public ResponseEntity<Void> deletePost(@PathVariable Long id) {
+		postService.deleteById(id);
+		return ResponseEntity.ok().build();
 	}
 
 }
